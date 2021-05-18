@@ -538,6 +538,11 @@ pre code {
   overflow-y: scroll;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 .container,
 .container-fluid,
 .container-xl,
@@ -598,6 +603,17 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+#otp-box {
+  width: 70%;
+  margin: auto;
+}
+
+#mobile-num {
+  padding-top: 0.75rem;
+  background-color: #fff;
+  text-align: center;
 }
 
 .col {
@@ -1077,7 +1093,7 @@ pre code {
 
   .col-md-4 {
     flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%;
+    /* max-width: 33.3333333333%; */
   }
 
   .col-md-5 {
@@ -4402,10 +4418,10 @@ input[type=button].btn-block {
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+  padding: 0.3rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
@@ -7767,6 +7783,12 @@ button.bg-dark:focus {
 
 .p-5 {
   padding: 3rem !important;
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .pt-5,
