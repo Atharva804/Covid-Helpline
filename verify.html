@@ -102,10 +102,22 @@
                         <h5 class="card-header" id="mobile-num">Enter Mobile Number</h5>
                         <h6 class="card-header" id="msgOTP" style="background-color: white; text-align: center;">An OTP will be sent to your mobile number for verification.</h6>
                         <div class="card-body">
-                            <div class="input-group">                                
-                                <ul id="form-message"></ul>
-                                <input class="form-control" name="mobile-no" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
-                                <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send" onclick="otp_gen()" style="margin-top: 1.5rem; width: 100%;">Send OTP</button>
+                            <div class="input-group">
+                                <form id="opt-form" method="POST" action="">
+                                    <ul id="form-message"></ul>
+
+                                    <!-- Mobile Number-->
+                                    <input class="form-control" name="mobile-no" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
+
+                                    <!-- Send OTP -->
+                                    <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send"  style="margin-top: 1.5rem; width: 100%;">Send OTP</button>
+
+                                    <!-- OTP -->
+                                    <input class="form-control" name="otp_no" id="otp-no" style="width: 100%; margin-top: 3vh;" onkeypress="if(this.value.length==6) return false;" type="number" placeholder="OTP" />
+
+                                    <!-- Verify! -->
+                                    <button type="submit" name="btn-otp" value="Verify!" class="btn btn-secondary" id="btn-otp" style="margin-top: 1.5rem; width: 100%;">Verify!</button>
+                                </form>
                             </div>
                         </div>
                     </div>

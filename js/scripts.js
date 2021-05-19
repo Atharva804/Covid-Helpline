@@ -1,12 +1,3 @@
-function otp_gen () {
-    // document.getElementById('verify_otp').submit();
-    document.getElementById('mobile-no').placeholder = "OTP";
-    document.getElementById('btn-send').value = "Verify!";
-    document.getElementById('btn-send').innerHTML = "Enter OTP";
-    document.getElementById('msgOTP').innerHTML = "OTP has been send to your number";
-// document.forms["verify-otp"]["mobile-no"].placeholder = "OTP"
-};
-
 const form = {
     mobile: document.getElementById('mobile-no'),
     submit: document.getElementById('btn-send'),
@@ -17,13 +8,28 @@ form.submit.addEventListener('click', () => {
     const request = new XMLHttpRequest();
 
     request.onload = () => {
-        console.log(request.responseText);
+        let responseObject = null;
+
+        let responseMsg = request.responseText;
+        console.log(responseMsg);
+        try {
+            responseObject = JSON.parse(request.responseText);
+        } catch (e) {
+            console.error("Could not parse JSON!");
+        }
+
+        if (responseObject) {
+            handleResponse(responseObject);
+        }
     };
 
-    const requestData = `mobile=${form.mobile.value}`;
-    console.log(requestData);
+    const requestData = `mobile=${form.mobile.value}`;    
 
     request.open('post', 'php/check-no.php');
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(requestData);
 });
+
+function handleResponse (responseObject) {
+    console.log(responseObject);
+}

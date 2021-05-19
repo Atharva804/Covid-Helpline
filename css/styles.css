@@ -2511,17 +2511,17 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
+  background-color: #3c85f3;
   border-color: #6c757d;
 }
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5a6268;
+  background-color: #7aafff;
   border-color: #545b62;
 }
 .btn-secondary:focus, .btn-secondary.focus {
   color: #fff;
-  background-color: #5a6268;
+  background-color: #7aafff;
   border-color: #545b62;
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
@@ -3331,7 +3331,6 @@ input[type=button].btn-block {
 
 .input-group {
   position: relative;
-  display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
