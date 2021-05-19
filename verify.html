@@ -98,16 +98,15 @@
                 <div class="col-md-4" id="otp-box">
                     <!-- Search widget-->
                     <div class="card my-4">
-                        <img _ngcontent-qye-c106="" src="assets/login-screen.svg" alt="otp-icon" style="width: 80px; margin-left: auto; margin-right: auto; margin-top: 2%;">
+                        <!-- <img _ngcontent-qye-c106="" src="assets/login-screen.svg" alt="otp-icon" style="width: 80px; margin-left: auto; margin-right: auto; margin-top: 2%;"> -->
                         <h5 class="card-header" id="mobile-num">Enter Mobile Number</h5>
                         <h6 class="card-header" id="msgOTP" style="background-color: white; text-align: center;">An OTP will be sent to your mobile number for verification.</h6>
                         <div class="card-body">
-                            
-                                <div class="input-group">                               
-                                        <input class="form-control" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
-                                        <input type="submit" value="Send OTP" class="btn btn-secondary" id="btn-send" type="button" style="margin-top: 1.5rem; width: 100%;" onclick="otp_gen()">
-                                </div>
-                            
+                            <div class="input-group">                                
+                                <ul id="form-message"></ul>
+                                <input class="form-control" name="mobile-no" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
+                                <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send" onclick="otp_gen()" style="margin-top: 1.5rem; width: 100%;">Send OTP</button>
+                            </div>
                         </div>
                     </div>
                     <!-- Categories widget-->
