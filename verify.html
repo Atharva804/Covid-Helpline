@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -175,11 +176,11 @@
 
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script> -->
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script> -->
 
         <script>
             // Your web app's Firebase configuration
@@ -191,22 +192,20 @@
                 storageBucket: "covid-helpline-def6f.appspot.com",
                 messagingSenderId: "557972633646",
                 appId: "1:557972633646:web:d63bd8048692f21b5ac7bf",
-                measurementId: "G-4JLVJ89R8N"
+                // measurementId: "G-4JLVJ89R8N"
             };
             // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
+            firebase.initializeApp(firebaseConfig);            
         </script>
 
-         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->         
         <script src="/__/firebase/8.6.1/firebase-app.js"></script>
-
+        <script src="/__/firebase/init.js"></script>
         <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
+        <!-- <script src="/__/firebase/8.6.1/firebase-analytics.js"></script> -->
 
         <!-- Add Firebase products that you want to use -->
         <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
-        <script src="/__/firebase/8.6.1/firebase-firestore.js"></script>
-        <script src="/__/firebase/init.js"></script>
+        <!-- <script src="/__/firebase/8.6.1/firebase-firestore.js"></script> -->
     </body>
 </html>
