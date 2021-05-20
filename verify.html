@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -11,6 +9,15 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+             
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+<script src="./js/scripts.js"></script>
+
+
     </head>
     <body>
         <div class="page-container">
@@ -103,6 +110,9 @@
                         <h5 class="card-header" id="mobile-num">Enter Mobile Number</h5>
                         <h6 class="card-header" id="msgOTP" style="background-color: white; text-align: center;">An OTP will be sent to your mobile number for verification.</h6>
                         <div class="card-body">
+
+                            <div id="captcha" style="width:200px;height: 200px;border-width: 1px;border-color: black;border-style: solid;">
+                            </div>
                             <div class="input-group">
                                 <form id="opt-form" method="POST" action="">
                                     <!-- <ul id="form-message"></ul> -->
@@ -111,12 +121,10 @@
                                     <input class="form-control" name="mobile-no" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
 
                                     <!-- Recaptcha Widget -->
-                                    <div id="captcha">
-                                        
-                                    </div>
+                                  
 
                                     <!-- Send OTP -->
-                                    <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send"  style="margin-top: 1.5rem; width: 100%;">Send OTP</button>
+                                    <button type="button" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send"  style="margin-top: 1.5rem; width: 100%;" onclick="visibleCaptcha()">Send OTP</button>
 
                                     <!-- OTP -->
                                     <input class="form-control" name="otp_no" id="otp-no" style="width: 100%; margin-top: 3vh;" onkeypress="if(this.value.length==6) return false;" type="number" placeholder="OTP" />
@@ -172,40 +180,10 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        
+   
+<!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script> -->
 
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script> -->
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script> -->
-
-        <script>
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var firebaseConfig = {
-                apiKey: "AIzaSyB-DT37LYFUuA9Bu1TJUC8SnqWAO5CRfh4",
-                authDomain: "covid-helpline-def6f.firebaseapp.com",
-                projectId: "covid-helpline-def6f",
-                storageBucket: "covid-helpline-def6f.appspot.com",
-                messagingSenderId: "557972633646",
-                appId: "1:557972633646:web:d63bd8048692f21b5ac7bf",
-                // measurementId: "G-4JLVJ89R8N"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);            
-        </script>
-
-         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->         
-        <script src="/__/firebase/8.6.1/firebase-app.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <!-- <script src="/__/firebase/8.6.1/firebase-analytics.js"></script> -->
-
-        <!-- Add Firebase products that you want to use -->
-        <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
-        <!-- <script src="/__/firebase/8.6.1/firebase-firestore.js"></script> -->
     </body>
 </html>
