@@ -33,30 +33,39 @@
 // function handleResponse (responseObject) {
 //     console.log(responseObject);
 // }
+	
+	// import firebase from "firebase/app";
+	// import "firebase/auth";
 
-function setLanguageCode() {
-    // [START auth_set_language_code]
-    firebase.auth().languageCode = 'it';
-    // To apply the default browser preference instead of explicitly setting it.
-    // firebase.auth().useDeviceLanguage();
-    // [END auth_set_language_code]
-  }
+	function setLanguageCode() {
+	    // [START auth_set_language_code]
+	    firebase.auth().languageCode = 'it';
+	    // To apply the default browser preference instead of explicitly setting it.
+	    // firebase.auth().useDeviceLanguage();
+	    // [END auth_set_language_code]
+  	}
   
-  function recaptchaVerifierInvisible() {
-    function onSignInSubmit() {
-      // TODO(you): Implement
-    }
-  
-    // [START auth_phone_recaptcha_verifier_invisible]
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('btn-send', {
-      'size': 'invisible',
-      'callback': (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        onSignInSubmit();
-      }
-    });
-    // [END auth_phone_recaptcha_verifier_invisible]
-  }
+  	function recaptchaVerifierSimple() {
+  	// [START auth_phone_recaptcha_verifier_simple]
+  	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('captcha');
+  	// [END auth_phone_recaptcha_verifier_simple]
+	}	
+
+	function recaptchaVerifierVisible() {
+	  // [START auth_phone_recaptcha_verifier_visible]
+	  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('captcha', {
+	    'size': 'normal',
+	    'callback': (response) => {
+	      // reCAPTCHA solved, allow signInWithPhoneNumber.
+	      // ...
+	    },
+	    'expired-callback': () => {
+	      // Response expired. Ask user to solve reCAPTCHA again.
+	      // ...
+	    }
+	  });
+	  // [END auth_phone_recaptcha_verifier_visible]
+	}
 
   function phoneSignIn() {
     function getPhoneNumberFromUserInput() {

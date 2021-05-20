@@ -104,10 +104,15 @@
                         <div class="card-body">
                             <div class="input-group">
                                 <form id="opt-form" method="POST" action="">
-                                    <ul id="form-message"></ul>
+                                    <!-- <ul id="form-message"></ul> -->
 
                                     <!-- Mobile Number-->
                                     <input class="form-control" name="mobile-no" id="mobile-no" style="width: 100%;" onkeypress="if(this.value.length==10) return false;" type="number" placeholder="Mobile No." />
+
+                                    <!-- Recaptcha Widget -->
+                                    <div id="captcha">
+                                        
+                                    </div>
 
                                     <!-- Send OTP -->
                                     <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send"  style="margin-top: 1.5rem; width: 100%;">Send OTP</button>
