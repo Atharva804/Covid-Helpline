@@ -629,7 +629,6 @@ pre code {
 }
 
 #otp-box {
-  width: 70%;
   margin: auto;
 }
 
@@ -1116,7 +1115,7 @@ pre code {
 
   .col-md-4 {
     flex: 0 0 33.3333333333%;
-    /* max-width: 33.3333333333%; */
+    max-width: 33.3333333333%;
   }
 
   .col-md-5 {
@@ -3270,6 +3269,86 @@ input[type=button].btn-block {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev:hover, .next:hover {
+  background-color: #141414;
+  color: white;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides, .mySlides2 {
+  display: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.dropbtn {
+  background-color: #3c85f3;
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 3vh;
+  border: 1px solid transparent;
+  border-color: #6c757d;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #67a0f7;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #468bf1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #5f9bf7}
+
+.show {display:block;}
 
 .dropdown-toggle-split {
   padding-right: 0.5625rem;

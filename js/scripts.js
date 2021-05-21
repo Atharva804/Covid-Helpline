@@ -1,90 +1,36 @@
-// const form = {
-//     mobile: document.getElementById('mobile-no'),
-//     submit: document.getElementById('btn-send'),
-//     messages: document.getElementById('form-message')
-// };
+var slideIndex = [1,1];
+var slideId = ["mySlides", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
 
-// form.submit.addEventListener('click', () => {
-//     const request = new XMLHttpRequest();
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);	
+}
 
-//     request.onload = () => {
-//         let responseObject = null;
-
-//         let responseMsg = request.responseText;
-//         console.log(responseMsg);
-//         try {
-//             responseObject = JSON.parse(request.responseText);
-//         } catch (e) {
-//             console.error("Could not parse JSON!");
-//         }
-
-//         if (responseObject) {
-//             handleResponse(responseObject);
-//         }
-//     };
-
-//     const requestData = `mobile=${form.mobile.value}`;    
-
-//     request.open('post', 'php/check-no.php');
-//     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-//     request.send(requestData);
-// });
-
-// function handleResponse (responseObject) {
-//     console.log(responseObject);
-// }
-	
-	// import firebase from "firebase/app";
-	// import "firebase/auth";
-
-	function setLanguageCode() {
-	    // [START auth_set_language_code]
-	    firebase.auth().languageCode = 'it';
-	    // To apply the default browser preference instead of explicitly setting it.
-	    // firebase.auth().useDeviceLanguage();
-	    // [END auth_set_language_code]
-  	}
-  
-  	function recaptchaVerifierSimple() {
-  	// [START auth_phone_recaptcha_verifier_simple]
-  	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('captcha');
-  	// [END auth_phone_recaptcha_verifier_simple]
-	}	
-
-	function recaptchaVerifierVisible() {
-	  // [START auth_phone_recaptcha_verifier_visible]
-	  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('captcha', {
-	    'size': 'normal',
-	    'callback': (response) => {
-	      // reCAPTCHA solved, allow signInWithPhoneNumber.
-	      // ...
-	    },
-	    'expired-callback': () => {
-	      // Response expired. Ask user to solve reCAPTCHA again.
-	      // ...
-	    }
-	  });
-	  // [END auth_phone_recaptcha_verifier_visible]
-	}
-
-  function phoneSignIn() {
-    function getPhoneNumberFromUserInput() {
-       const mobile_no = document.getElementById('mobile-no').value;
-       document.getElementById('mobile-no').value;
-    }
-  
-    // [START auth_phone_signin]
-    const phoneNumber = getPhoneNumberFromUserInput();
-    const appVerifier = window.recaptchaVerifier;
-    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          window.confirmationResult = confirmationResult;
-          // ...
-        }).catch((error) => {
-          // Error; SMS not sent
-          // ...
-        });
-    // [END auth_phone_signin]
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
   }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+
+function showDropdown () {
+  document.getElementById("dropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdown = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdown.length; i++) {
+      var openDropdown = dropdown[i];
+      if (openDropdown.classList.contains("show")){
+        openDropdown.claasList.remove("show");
+      }
+    }
+  }
+}
