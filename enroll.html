@@ -13,7 +13,7 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="page-container">
+        <div class="page-container" style="min-height: calc(100vh - 95px);">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -26,8 +26,8 @@
                                 Home                                
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="verify.html">Upload</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                         <li class="nav-item active"><a class="nav-link" href="verify.html">
                             Sign In
@@ -100,13 +100,13 @@
                     <!-- Search widget-->
                     <div class="card my-4">
                         <!-- <img _ngcontent-qye-c106="" src="assets/login-screen.svg" alt="otp-icon" style="width: 80px; margin-left: auto; margin-right: auto; margin-top: 2%;"> -->
-                        <h5 class="card-header" id="mobile-num">Registration</h5>
-                        <h6 class="card-header" id="msgOTP" style="background-color: white; text-align: center;">Fill the form and register with us.</h6>
+                        <!-- <h5 class="card-header" id="mobile-num">Registration</h5> -->
+                        <h6 class="card-header" id="msgOTP" style="background-color: white; text-align: center;">Please fill the details...</h6>
                         <div class="card-body">
                             <div class="input-group">
-                                <form id="opt-form" method="POST" action="">
+                                <form id="opt-form" enctype="multipart/form-data" method="POST" action="php/enroll.php">
                                     <!-- <ul id="form-message"></ul> -->
-                                    <input class="form-control" name="fname" id="fname" style="width: 100%;" type="text" placeholder="Full Name" />
+                                    <input class="form-control" name="fname" id="fname" style="width: 100%;" type="text" placeholder="Full Name" required />
 
                                     <!-- Recaptcha Widget -->
                                     <!-- <div id="captcha">
@@ -115,29 +115,75 @@
 
                                     <!-- Send OTP -->
                                     <!-- <button type="submit" name="btn-submit" value="Send OTP" class="btn btn-secondary" id="btn-send"  style="margin-top: 1.5rem; width: 100%;">Send OTP</button> -->
-                                    <input class="form-control" name="address" id="address" style="width: 100%; margin-top: 3vh;" type="text" placeholder="Address" />
+                                    <input class="form-control" name="address" id="address" style="width: 100%; margin-top: 3vh;" type="text" placeholder="Address" required />
                                     
                                     <div class="d-flex flex-row ">
-                                        <input class="form-control mr-2" name="city" id="city" style="width: 50%; margin-top: 3vh;" type="text" placeholder="City" />
+                                        <input class="form-control mr-2" name="city" id="city" style="width: 50%; margin-top: 3vh;" type="text" placeholder="City" required />
 
-                                        <input class="form-control" name="pin" id="pin" style="width: 50%; margin-top: 3vh;" type="text" placeholder="Pin" />
+                                        <input class="form-control" name="pin" id="pin" style="width: 50%; margin-top: 3vh;" type="number" onkeypress="if(this.value.length==6) return false;" placeholder="Pin" required />
                                     </div>
-                                    
-                                    <div class="dropdown">
-                                        <select value="Category" name="Category" class="dropbtn">
-                                        <div class="dropdown-content" id="dropdown">
-                                            <option value="N" selected disabled hidden>Category</option>
-                                            <option value="H">Help me</option>
-                                            <option value="V">Volunteers</option>
-                                            <option value="D">Doner</option>
-                                            <option value="F">Fund Raiser</option>
-                                            <option value="S">Supplier</option>
-                                            <option value="O">Others</option>
+                                                                        
+                                    <div class="d-flex flex-row">
+                                        <div class="dropdown mr-2" style="width: 50;">
+                                            <select value="Category" required name="Category" class="dropbtn">
+                                            <div class="dropdown-content" id="dropdown">
+                                                <option value="N" selected disabled hidden>Category</option>
+                                                <option name="Category" value="H">Help me</option>
+                                                <option name="Category" value="SO">Social Worker</option>
+                                                <option name="Category" value="D">Doner</option>
+                                                <option name="Category" value="F">Fund Raiser</option>
+                                                <option name="Category" value="S">Buisness Services</option>
+                                                <option name="Category" value="O">Others</option>
+                                            </div>
+                                            </select>
                                         </div>
-                                        </select>
+
+                                        <div class="dropdown">
+                                            <select name="helpType" required class="dropbtn">
+                                            <div class="dropdown-content" id="dropdown">
+                                                <option name="helpType" value="N" selected disabled hidden>Help type</option>
+                                                <option name="helpType" value="H">Hospital Admission</option>
+                                                <option name="helpType" value="A">Ambulance</option>
+                                                <option name="helpType" value="V">Ventilator</option>
+                                                <option name="helpType" value="OC">Oxygen Concentrator</option>
+                                                <option name="helpType" value="OCY">Oxygen Cylinder</option>
+                                                <option name="helpType" value="OM">Oxy Meter</option>
+                                                <option name="helpType" value="Diag">Dignostics</option>
+                                                <option name="helpType" value="P">Pathology</option>
+                                                <option name="helpType" value="DO">Doctors</option>
+                                                <option name="helpType" value="HW">Health Workers</option>
+                                                <option name="helpType" value="M">Medicine</option>
+                                                <option name="helpType" value="S">Shelter</option>
+                                                <option name="helpType" value="QF">Quarantine Facility</option>
+                                                <option name="helpType" value="G">Grocery</option>
+                                                <option name="helpType" value="FS">Financial Support</option>
+                                                <option name="helpType" value="T">Transportaion</option>
+                                                <option name="helpType" value="W">Wellfare Scheme</option>
+                                                <option name="helpType" value="PS">Pariwar Suraksha</option>
+                                                <option name="helpType" value="BD">Blood Doner</option>
+                                                <option name="helpType" value="PD">Plasma Doner</option>
+                                                <option name="helpType" value="CD">Concentrator Doner</option>
+                                                <option name="helpType" value="OMD">Oxy Meter Doner</option>
+                                                <option name="helpType" value="MD">Medicine Doner</option>
+                                                <option name="helpType" value="FO">Food/Tiffin</option>
+                                                <option name="helpType" value="O">Others</option>
+                                            </div>
+                                            </select>
+                                        </div>
                                     </div>
+
+                                    <div class="d-flex flex row" style="flex-wrap:nowrap; max-width: 100%; margin: 0;">
+                                        <textarea placeholder="Message" class="form-control msgbox" name="message" id="message" style="margin-top: 3vh; height: 80px;"></textarea>
+                                    </div>
+
+                                    <div style="margin-top: 3vh;">
+                                        <label for="files" class="mr-2">Select Image:</label>
+                                        <input type="file" id="fileToUpload" name="fileToUpload"/>
+                                    </div>
+
+                                    <input style="margin-top: 3vh;" type="checkbox" required/> I accept the <a href="#">Tearms and Conditions</a>
                                     <!-- Verify! -->
-                                    <button type="submit" name="btn-otp" value="Verify!" class="btn btn-secondary" id="btn-otp" style="margin-top: 1.5rem; width: 100%;">Verify!</button>
+                                    <button type="submit" name="btn-otp" value="Verify!" class="btn btn-secondary" id="btn-otp" style="margin-top: 3vh; width: 100%;">Upload</button>
                                 </form>
                             </div>
                         </div>
@@ -178,15 +224,16 @@
                     </div> -->
                 </div>
             </div>
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark" id="footer">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
         </footer>
-    </div>
+    <!-- </div> -->
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <!-- <script src="js/scripts.js"></script> -->       
+        <!-- <script src="js/scripts.js"></script> -->
     </body>
 </html>

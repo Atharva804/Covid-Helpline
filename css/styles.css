@@ -3294,10 +3294,7 @@ input[type=button].btn-block {
   max-width: 1000px;
   position: relative;
   margin: auto;
-}
-
-.mySlides, .mySlides2 {
-  display: none;
+  align-self: center;
 }
 
 .next {
@@ -3319,6 +3316,7 @@ input[type=button].btn-block {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
+  width: 100%;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -3328,6 +3326,7 @@ input[type=button].btn-block {
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 50%;
 }
 
 .dropdown-content {
@@ -3349,6 +3348,14 @@ input[type=button].btn-block {
 .dropdown-content a:hover {background-color: #5f9bf7}
 
 .show {display:block;}
+
+.msgbox {
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+}
 
 .dropdown-toggle-split {
   padding-right: 0.5625rem;
@@ -7887,7 +7894,7 @@ button.bg-dark:focus {
 }
 
 #footer {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   bottom: 0;
 }
